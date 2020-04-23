@@ -20,5 +20,8 @@ public class SuanFaMain {
 
         System.out.println(df.format(b));
 
+
+//        new SuanFaMain().getClass().new
+
     }
 }
