@@ -1,5 +1,6 @@
 package cn.techwolf.data.suanfa;
 
+import java.lang.reflect.*;
 import java.text.DecimalFormat;
 
 /**
@@ -7,7 +8,7 @@ import java.text.DecimalFormat;
  * @create:2020-04-20
  * @describe
  **/
-public class SuanFaMain {
+public class SuanFaMain<E,F,G> {
 
     public static void main(String[] args) {
 
@@ -23,5 +24,18 @@ public class SuanFaMain {
 
 //        new SuanFaMain().getClass().new
 
+        Type genericSuperclass = new SuanFaMain().getClass().getGenericSuperclass();
+
+        System.out.println(genericSuperclass.getTypeName());
+
+
+        SuanFaMain<String, Integer, Object> suanfa = new SuanFaMain<>();
+
+//        Class<?> e = find0(suanfa, SuanFaMain.class, "E");
+
+
     }
+
+
+
 }
