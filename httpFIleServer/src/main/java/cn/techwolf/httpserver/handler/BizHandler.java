@@ -5,15 +5,13 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
+import io.netty.util.AttributeKey;
 import io.netty.util.CharsetUtil;
 
 import java.util.Iterator;
 import java.util.Map;
 
 public class BizHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
-
-
-//    public static final AttributeKey<DeviceSession> KEY = AttributeKey.valueOf("IO");
 
 
     @Override
@@ -23,6 +21,7 @@ public class BizHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
         Channel channel = channelHandlerContext.channel();
 
+        channel.attr(Constants.KEY).set(123L);
 
         Iterator<Map.Entry<String, ChannelHandler>> iterator = pipeline.iterator();
 
@@ -43,27 +42,9 @@ public class BizHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
             return;
         }
 
-        RequestParser requestParser = new RequestParser(request);
+        channelHandlerContext.fireChannelRead(request.retain());
 
-        Map<String, String> parse = requestParser.parse();
 
-        ByteBuf resContent = Unpooled.copiedBuffer("server ok", CharsetUtil.UTF_8);
-
-        DefaultFullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, resContent);
-
-        ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(response);
-
-        //异步
-        channelFuture.addListener(new ChannelFutureListener() {
-
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-//                channelFuture.sync().removeListener(this).channel().close();
-                System.out.println("response finish");
-                channelFuture.channel().close();
-            }
-
-        });
 
     }
 
