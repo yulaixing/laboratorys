@@ -20,10 +20,10 @@ import java.util.Map;
 public class Biz2Handler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, FullHttpRequest request) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
 
 
-        Channel channel = channelHandlerContext.channel();
+        Channel channel = ctx.channel();
 
         System.out.println("key=="+channel.attr(Constants.KEY).get());
 
@@ -37,7 +37,13 @@ public class Biz2Handler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
         DefaultFullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, resContent);
 
-        ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(response);
+
+        Thread.sleep(3000);
+
+        ChannelFuture channelFuture = ctx.channel().writeAndFlush(response);
+
+//        ChannelFuture channelFuture = ctx.writeAndFlush(response);
+
 
         //异步
         channelFuture.addListener(new ChannelFutureListener() {

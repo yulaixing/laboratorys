@@ -2,6 +2,7 @@ package cn.techwolf.httpserver;
 
 import cn.techwolf.httpserver.handler.Biz2Handler;
 import cn.techwolf.httpserver.handler.BizHandler;
+import cn.techwolf.httpserver.handler.BizHandler3;
 import cn.techwolf.httpserver.ssl.SSLContextFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -61,6 +62,7 @@ public class HttpServer {
 //                    socketChannel.pipeline().addLast("httpEncoder",new HttpResponseEncoder());
                     socketChannel.pipeline().addLast("httpChunked",new ChunkedWriteHandler());
                     socketChannel.pipeline().addLast("bizHandler",new BizHandler());
+//                    socketChannel.pipeline().addLast("biz3Handler",new BizHandler3());
                     socketChannel.pipeline().addLast("biz2Handler",new Biz2Handler());
 
                 }
