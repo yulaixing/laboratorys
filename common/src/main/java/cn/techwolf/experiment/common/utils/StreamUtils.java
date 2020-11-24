@@ -24,7 +24,7 @@ public class StreamUtils {
 
         System.out.println(13&17);  //00001101 00010001
 
-
+        System.out.println(0x0100);
     }
 
 
