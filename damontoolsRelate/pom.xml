@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>damontoolsTest</artifactId>
+    <artifactId>damontoolsRelate</artifactId>
     <!-- pom文件里的属性优先级比fileters文件优先级高 -->
 
     <properties>
