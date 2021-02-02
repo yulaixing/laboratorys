@@ -9,7 +9,7 @@
         <module>rpc</module>
         <module>netServer</module>
         <module>damontoolsRelate</module>
-        <module>mq</module>
+        <module>springbootMq</module>
     </modules>
     <groupId>cn.techwolf.bladestorm</groupId>
     <artifactId>laboratory</artifactId>
