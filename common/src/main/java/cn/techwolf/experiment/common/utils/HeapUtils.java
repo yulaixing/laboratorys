@@ -1,6 +1,5 @@
 package cn.techwolf.experiment.common.utils;
 
-import org.junit.Test;
 
 /**
  * @author yl.xing
@@ -10,7 +9,6 @@ import org.junit.Test;
 public class HeapUtils {
 
 
-    @Test
     public void prepare(){
         int[] array = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3 };
 

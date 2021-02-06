@@ -1,6 +1,5 @@
 package cn.techwolf.experiment.common.utils;
 
-import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,7 +11,6 @@ import java.util.Date;
  **/
 public class DateUtils {
 
-    @Test
     public void test() {
 
         long day=howLongDidTheWorkTake(new Date(), "20170628");

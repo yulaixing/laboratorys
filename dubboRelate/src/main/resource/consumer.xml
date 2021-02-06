@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 http://www.springframework.org/schema/beans/spring-beans.xsd
+					 http://code.alibabatech.com/schema/dubbo
+					 http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="laboratory-client">
+        <dubbo:parameter key="qos.enable" value="true" />
+        <dubbo:parameter key="qos.accept.foreign.ip" value="false" />
+        <dubbo:parameter key="qos.port" value="33333" />
+    </dubbo:application>
+    <!-- 虽然叫mcp client 但是服务现在都迁移到wap上了 -->
+
+    <dubbo:protocol name="dubbo" port="20888" dispatcher="message"/>
+
+
+    <dubbo:registry id="laboratory" protocol="zookeeper" address="localhost:2181" group="dubbo/blue/laboratory"/>
+
+
+
+    <dubbo:reference id="providerService" interface="cn.techwolf.dubbo.relate.Provider.instance.ProviderService"
+                     version="1.0.0"
+                     check="false" registry="laboratory" timeout="4000"/>
+
+
+</beans>

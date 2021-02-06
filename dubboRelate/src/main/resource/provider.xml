@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--suppress CheckTagEmptyBody -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+					 http://www.springframework.org/schema/beans/spring-beans.xsd
+					 http://code.alibabatech.com/schema/dubbo
+					 http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <dubbo:application name="techwolf-blue-laboratory-server" logger="log4j"/>
+
+    <dubbo:provider id="techwolf-blue-laboratory" loadbalance="roundrobin" delay="-1" threadpool="fixed"
+                    threads="600" retries="3"/>
+
+    <dubbo:registry id="laboratory" protocol="zookeeper" address="localhost:2181"
+                    group="dubbo/blue/laboratory" file="dubbo-registry-hrsaas-cache"/>
+
+    <dubbo:protocol name="dubbo" port="20889" dispatcher="message"/>
+
+    <bean id="providerService" class="cn.techwolf.dubbo.relate.Provider.instance.ProviderServiceImpl"></bean>
+
+    <dubbo:service ref="providerService" interface="cn.techwolf.dubbo.relate.Provider.instance.ProviderService"
+                   version="1.0.0" timeout="5000" retries="0">
+    </dubbo:service>
+
+
+</beans>

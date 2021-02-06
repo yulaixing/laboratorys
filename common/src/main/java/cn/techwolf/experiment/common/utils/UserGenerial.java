@@ -1,10 +1,7 @@
 package cn.techwolf.experiment.common.utils;
 
-import lombok.Data;
 
 import java.io.Serializable;
-
-@Data
 public class UserGenerial<P> implements Serializable {
 
     private P p;

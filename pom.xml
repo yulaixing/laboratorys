@@ -10,6 +10,9 @@
         <module>netServer</module>
         <module>damontoolsRelate</module>
         <module>springbootMq</module>
+        <module>dubboRelate</module>
+        <module>dubboRelate</module>
+        <module>dubboRelate</module>
     </modules>
     <groupId>cn.techwolf.bladestorm</groupId>
     <artifactId>laboratory</artifactId>

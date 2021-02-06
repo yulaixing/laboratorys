@@ -1,6 +1,5 @@
 package cn.techwolf.experiment.common.redis;
 
-import org.junit.Test;
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
@@ -50,7 +49,6 @@ public class Cluster {
      * 测试key:value数据
      * 集群中flushDB、keys废弃
      */
-    @Test
     public void testKey() throws InterruptedException {
 
 //        GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();

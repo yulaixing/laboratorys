@@ -1,6 +1,5 @@
 package cn.techwolf.experiment.common.redis;
 
-import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.JedisSentinelPool;
@@ -79,7 +78,6 @@ public class RedisSentinelCache {
         }
     }
 
-    @Test
     public void test1(){
         set("test","test123");
 
