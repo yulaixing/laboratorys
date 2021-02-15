@@ -1,7 +1,5 @@
 package cn.techwolf.data;
 
-import java.io.InputStream;
-import java.net.Socket;
 import java.util.HashMap;
 import java.util.Iterator;
 
