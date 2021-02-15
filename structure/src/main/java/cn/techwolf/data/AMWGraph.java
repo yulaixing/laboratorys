@@ -3,7 +3,7 @@ package cn.techwolf.data;
 import java.util.ArrayList;
 
 /**
- *  临近矩阵
+ *  临近矩阵 顶点,边，权重，出度，入度
  */
 public class AMWGraph {
 
@@ -47,15 +47,6 @@ public class AMWGraph {
 
 
     public static void main(String[] args) {
-
-
-        synchronized (Object.class){
-
-            try {
-                Object.class.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        System.out.println("hahahaha");
     }
 }

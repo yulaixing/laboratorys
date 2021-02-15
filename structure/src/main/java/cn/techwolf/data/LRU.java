@@ -1,13 +1,15 @@
 package cn.techwolf.data;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**
+ * 最少使用算法
+ * @param <K>
+ * @param <V>
+ */
 public class LRU<K, V> implements Iterable<K> {
 
     private Node head;
@@ -126,8 +128,6 @@ public class LRU<K, V> implements Iterable<K> {
     public Iterator<K> iterator() {
         return new Iterator<K>() {
 
-//            private Node oo=head.next;
-
             private Node cur = head.next;
 
             @Override
@@ -146,24 +146,7 @@ public class LRU<K, V> implements Iterable<K> {
     }
 
 
-    public static void main(String[] args) throws Exception {
-
-        String ip="127.0.0.1";
-        int port=8080;
-        Socket socket = new Socket(ip,port);
-
-
-        socket.setSoTimeout(5000);
-        InputStream inputStream = socket.getInputStream();
-
-//        inputStream.read()
-
-//        BufferedReader
-
-//        new BufferedReader(new InputStreamReader())
-
-
-
+    public static void main(String[] args) {
 
     }
 

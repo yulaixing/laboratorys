@@ -4,10 +4,12 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.Random;
 
+/**
+ * 构造链表
+ */
 public class LinkListData {
 
     private Node sentryNode;
-
 
     class Node {
         private String nodeName;
@@ -120,11 +122,7 @@ public class LinkListData {
 
         System.out.println(linkListData.toString());
 
-
         LinkedList<Integer> link = new LinkedList<>();
-
-//        link.addFirst();
-
 
         BigInteger bigInteger = new BigInteger(String.valueOf(8));
 
@@ -132,14 +130,10 @@ public class LinkListData {
 
         System.out.println(binary);
 
-
-//        System.out.println(-4>>3);
-
-
     }
 
 
-    public static  void secret(int i) {
+    public static void secret(int i) {
 
         //随机密钥
         int random = new Random().nextInt(100);
@@ -147,15 +141,15 @@ public class LinkListData {
         //结果
         int result = (i + random) % 100;
 
-        System.out.println("result="+result);
+        System.out.println("result=" + result);
 
         //偏移量
-        int offset=(i+random)/100;
+        int offset = (i + random) / 100;
 
-        System.out.println("offset="+offset);
+        System.out.println("offset=" + offset);
 
         //解密
-        i=result+offset*100-random;
+        i = result + offset * 100 - random;
 
         System.out.println(i);
     }
@@ -163,15 +157,7 @@ public class LinkListData {
 
     public static void main(String[] args) {
 
-        //secret(236);
-
-
-
-
-
     }
-
-
 
 
 }

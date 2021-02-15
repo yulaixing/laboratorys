@@ -84,7 +84,6 @@ public class RequestParser {
         for (Map.Entry<String, List<String>> attr : uriAttributes.entrySet()) {
             for (String attrVal : attr.getValue()) {
                 System.out.println(attrVal);
-//                responseContent.append("URI: " + attr.getKey() + '=' + attrVal + "\r\n");
             }
         }
         System.out.println(parmMap);

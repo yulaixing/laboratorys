@@ -79,7 +79,6 @@ public class TopK {
         int [] a ={47,25,16,24,15,23,1548,255,445,47,54,0,99999,2312213,1223123123,2};
         TopK quickSort = new TopK();
         int num = quickSort.findKthLargest(a,3);
-//        System.out.println(num);
         for (Integer i:quickSort.result) {
             System.out.println(i);
         }
