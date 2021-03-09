@@ -1,3 +1,6 @@
+
+//该项目存在各种工具，即擦即用即可。
+
  //  sslKeyStorePath=pfx文件路径
     //            sslKeyStorePassword=pfx文件密码
     //    sslKeyStoreType=PKCS12
